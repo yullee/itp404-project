@@ -1,0 +1,17 @@
+{{#each model as |post|}}
+  <h3>{{post.title}}</h3>
+  <form onsubmit={{action "updatePost" post}}>
+    {{input type="text" value=post.title}}
+    <button type="submit">Update Post</button>
+  </form>
+  <button onclick={{action "deletePost" post}}>Delete Post</button>
+{{else}}
+  <p>No posts.</p>
+{{/each}}
+
+<h2>Create a Post</h2>
+
+<form onsubmit={{action "createPost"}}>
+  Title: {{input type="text" value=title}}
+  <button type="submit">Create Post</button>
+</form>
