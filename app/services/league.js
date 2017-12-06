@@ -1,9 +1,3 @@
-// import Service from '@ember/service';
-//
-// export default Service.extend({
-// });
-
-
 /* global $ */
 import Ember from 'ember';
 

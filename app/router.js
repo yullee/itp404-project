@@ -8,12 +8,12 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('posts');
+
   this.route('searches');
 
   this.route('schedules', {
     path: 'searches/schedules/:schedule'
   });
-  // this.route('contacts');
   this.route('contacts');
 });
 

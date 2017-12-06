@@ -3,7 +3,7 @@
 
 module.exports = function(environment) {
   let ENV = {
-    modulePrefix: 'ember-data-demo',
+    modulePrefix: 'itp404-final-project',
     environment,
     rootURL: '/',
     locationType: 'auto',
