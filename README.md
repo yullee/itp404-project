@@ -1,51 +1,47 @@
-# ember-data-demo
+ITP 404 Final Project : Premier League
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+- I have built my own API to create this project.
+Created a restful API with node, express, sequelize and mysql
+http://itp404-premier-league.herokuapp.com/api
 
-## Prerequisites
+- About the page
+    /
+    Addon: Has a unique title, About
 
-You will need the following things properly installed on your computer.
+- Post a review on their team
+    /posts
+    AJAX request: Get, Post, Put, Delete requests
+    This route is based on http://localhost:3000/api/posts.
+    Addon: Has a unique title, Rating
+    Toastr: A success notification when successfully created, updated, or deleted. An error notification when a call fails.
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with NPM)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+- Search for team schedules
+    /searches
+    Addon: Has a unique title, Search
 
-## Installation
+- Schedule results
+    /searches/schedules
+    AJAX request: Get request
+    This route is based on http://itp404-premier-league.herokuapp.com.
+    Addon: Has a unique title, Schedule
+    If no search result is found, the message appears on the page.
+    Use Momentjs to sort the schedule results from latest to earliest date
 
-* `git clone <repository-url>` this repository
-* `cd ember-data-demo`
-* `npm install`
+- Send a message to EPL
+    /contacts
+    AJAX request: Get and Post requests
+    This route is based on http://localhost:3000/api/contacts.
+    Addon: Has a unique title, Contact
+    Toastr: A success notification when successfully created. An error notification when a call fails.
 
-## Running / Development
+- Loading and error indicators.
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+- All 77 tests have passed.
+    Three integration tests
+    Index-counter-test: Helps to count the index number; Test if the return index value is same as expected.
+    Make-bold-test: Test if return the correct string, not <b>1234</b>
+    Relative-time-test: Test if return a correctly computed value
+    Three acceptance tests
+    Post-test: Test if the review form is created successfully
+    Search-test: Test if the URL correctly reflects the search input
+    Contact-test: Test if the contact form is sent successfully
