@@ -1,0 +1,29 @@
+<h1>{{make-bold "Contact"}}</h1>
+<br>
+<div class="row" id="contact-form">
+    <div class="col-sm-3">
+      <img id="contact-form" src="https://static1.squarespace.com/static/51523afce4b047ba3da4c060/t/515e0e5fe4b0bca14d7a44f2/1365118559640/Contact_Icons-02.png"/>
+    </div>
+    <div class="col-sm-6">
+        <form onsubmit={{action "save"}}>
+            {{input type="text" id="name" value=name class="form-control" placeholder="Name" autocomplete="off" }}
+            <br>
+            {{input type="text" id="email" value=email class="form-control" placeholder="Email" autocomplete="off" }}
+            <br>
+            {{textarea type="text" id="message" value=message class="form-control" placeholder="Message" autocomplete="off"}}
+            <br>
+            <button class="btn btn-primary" type="submit" id="submit-button">Send</button>
+            <br>
+        </form>
+        <br>
+        <!-- If the form is successfully sent -->
+        {{#unless notSent}}
+        <div class="text-success" id="success-message">Successfully sent!</div>
+        {{/unless}}
+        <!-- If the form is not successfully sent -->
+        {{#unless sent}}
+        <div class="text-danger" id="fail-message">Failed to send!</div>
+        {{/unless}}
+    </div> <!-- inner row end-->
+    <div class="col-sm-3"></div>
+</div> <!-- End of inner row -->

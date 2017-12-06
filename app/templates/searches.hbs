@@ -1,0 +1,13 @@
+<!-- Search for your team schedules -->
+<div class="container" >
+    <h3>Search your team schedules</h3>
+
+    <form onsubmit={{action "searchForEvents"}}>
+      {{input type="text" id="search-input" class="form-control" placeholder="Manchester eg. manches, man" value=schedule}}
+      <br>
+      <button type="submit" class="btn btn-default" id="search-button">Search</button>
+    </form>
+</div>
+<img src="https://www.singtel.com/content/dam/singtel/tv/premier-league/banner-mobile-clubs.png"/>
+
+{{outlet}}

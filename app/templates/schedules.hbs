@@ -1,0 +1,21 @@
+{{#link-to 'searches' class="btn btn-default" id="left"}}Back to Search{{/link-to}}
+<br><br>
+<!-- If no schedule is found, display a message -->
+{{#unless sortedSchedules}}
+<h3><i>No schedule available.</i></h3>
+{{/unless}}
+
+{{#if sortedSchedules}}
+<div id="label">
+* Sorting from latest to earliest date
+</div>
+<br>
+{{/if}}
+{{#each sortedSchedules as |schedule index|}}
+
+ <button type="submit" class="btn btn-primary" id="fav">Schedule # {{index-count index}}</button>
+ <!-- Counting schedule index -->
+    {{schedule-list schedule=schedule}}
+
+ {{/each}}
+{{#link-to 'searches' class="btn btn-default" id="left-2"}}Back to Search{{/link-to}}

@@ -1,17 +1,71 @@
-{{#each model as |post|}}
-  <h3>{{post.title}}</h3>
-  <form onsubmit={{action "updatePost" post}}>
-    {{input type="text" value=post.title}}
-    <button type="submit">Update Post</button>
-  </form>
-  <button onclick={{action "deletePost" post}}>Delete Post</button>
+<div class="row" id="img-bg">
+    <div class="col-sm-9 col-form-label text-sm-right">
+        <h2> CREATE A REVIEW ON YOUR TEAM</h2>
+        <div class="row">
+            <div class="col-sm-5"></div>
+            <div class="col-sm-7">
+                <form onsubmit={{action "createPost"}}>
+                {{input type="text" id="club" value=club class="form-control text-sm-right" placeholder="Team" autocomplete="off" }}
+                <br>
+                {{textarea type="text" id="comment" value=talk class="form-control text-sm-right" placeholder="Comment" autocomplete="off"}}
+                <br>
+                <button class="btn btn-primary" type="submit" id="create-button">Create</button>
+                <br>
+                </form>
+                <br>
+                <!-- If the form is successfully sent -->
+                {{#unless notSent}}
+                <div class="text-success" id="success-message">Successfully created!</div>
+                {{/unless}}
+                <!-- If the form is not successfully sent -->
+                {{#unless sent}}
+                <div class="text-danger" id="fail-message">Failed to create!</div>
+                {{/unless}}
+            </div> <!-- inner row end-->
+        </div> <!-- End of inner row -->
+    </div> <!-- End of col -->
+</div> <!-- End of row -->
+<hr>
+
+<!-- Loop a model -->
+{{#each model as |post index|}}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"> RATING # {{index-count index}}</h3>
+        </div> <!-- End of panel-heading -->
+        <div class="panel-body">
+            <div class="col-sm-3 col-form-label text-sm-center">
+            </div>
+          <div class="col-sm-6 col-form-label text-sm-center">
+               <form onsubmit={{action "updatePost" post}}>
+          <h3>Team {{input type="text" value=post.club placeholder=post.club class="form-control"}}</h3>
+          Comment {{textarea type="text" class="form-control" value=post.talk placeholder=post.talk}}
+          <br>
+           <div class="col-sm-6 col-form-label ">
+          <button type="submit" class="btn btn-primary" id="update-button">Update Post</button>
+
+          <!-- Display a status -->
+      {{#unless notUpdated}}
+        <div class="text-success" id="success-update-message"><br>Successfully updated!</div>
+      {{/unless}}
+      <!-- If the form is not successfully sent -->
+      {{#unless updated}}
+        <div class="text-danger" id="fail-update-message"><br>Failed to update!</div>
+      {{/unless}}
+      </div>
+      </form>
+
+      <div class="col-sm-6 col-form-label">
+           <button onclick={{action "deletePost" post}} class="btn btn-primary" id="delete-button">Delete Post</button>
+       </div>
+           <br>
+            </div>
+           <div class="col-sm-3 col-form-label text-sm-center">
+           </div>
+       </div> <!-- End of panel-body -->
+   </div> <!-- End of panel -->
+  <br>
+  <br>
 {{else}}
-  <p>No posts.</p>
+  <p>No posts available.</p>
 {{/each}}
-
-<h2>Create a Post</h2>
-
-<form onsubmit={{action "createPost"}}>
-  Title: {{input type="text" value=title}}
-  <button type="submit">Create Post</button>
-</form>
