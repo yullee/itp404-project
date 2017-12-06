@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/yulleeki/itp404-final-project.svg?branch=master)](https://travis-ci.org/yulleeki/itp404-final-project)
+
 ITP 404 Final Project : Premier League
 
 - I have built my own API to create this project.
