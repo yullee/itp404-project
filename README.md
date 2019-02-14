@@ -22,3 +22,5 @@ ITP 404 Final Project : Premier League
 - Loading and error indicators.
 
 - All 77 tests have passed. Three integration tests Index-counter-test: Helps to count the index number; Test if the return index value is same as expected. Make-bold-test: Test if return the correct string, not 1234 Relative-time-test: Test if return a correctly computed value Three acceptance tests Post-test: Test if the review form is created successfully Search-test: Test if the URL correctly reflects the search input Contact-test: Test if the contact form is sent successfully
+
+- Check my DEMO here: https://www.youtube.com/watch?v=5Qyo2jlf73M 
